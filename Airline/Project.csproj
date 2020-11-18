@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Airline\**" />
+    <Compile Remove="ICountable\**" />
+    <Compile Remove="Plane\**" />
+    <Compile Remove="WorkShop\**" />
+    <EmbeddedResource Remove="Airline\**" />
+    <EmbeddedResource Remove="ICountable\**" />
+    <EmbeddedResource Remove="Plane\**" />
+    <EmbeddedResource Remove="WorkShop\**" />
+    <None Remove="Airline\**" />
+    <None Remove="ICountable\**" />
+    <None Remove="Plane\**" />
+    <None Remove="WorkShop\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Plane,carCapacity,Range,Capacity,FuelConsumption.txt" />
+    <None Remove="Plane,carCapacity,Range,Capacity.csv" />
+    <None Remove="Plane,carCapacity,Range,Capacity.txt" />
+    <None Remove="Plane,carCapacity,Range,Capacity.xlsx" />
+    <None Remove="~%24Plane,carCapacity,Range,Capacity.csv" />
+    <None Remove="~%24Plane,carCapacity,Range,Capacity.xlsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="Airline\Airline.csproj" />
+    <ProjectReference Include="Plane\Plane.csproj" />
+    <ProjectReference Include="WorkShop\WorkShop.csproj" />
+  </ItemGroup>
+
+</Project>
