@@ -1,9 +1,8 @@
-
 .vs/
 *.exe
 *.exe
 *.pdb
 *.dll
 *.dll
-*/bin/
-*/obj/
+*bin
+*obj
