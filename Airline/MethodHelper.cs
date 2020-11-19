@@ -8,16 +8,15 @@ namespace ProjectNamespace
     class MethodHelper : ICountable
     {
         public uint GetGeneralCapacityForPeople(List<Plane> planes)
-        {
+        {            
             try
             {
-                uint _generalCapacityForPeople = 0;
+                uint generalCapacityForPeople = 0;
                 foreach (var item in planes)
                 {
-
-                    _generalCapacityForPeople += Convert.ToUInt32(item.CapacityForPeople);
+                    generalCapacityForPeople += Convert.ToUInt32(item.CapacityForPeople);
                 }
-                return _generalCapacityForPeople;
+                return generalCapacityForPeople;
             }
             catch (Exception)
             {
@@ -28,12 +27,12 @@ namespace ProjectNamespace
         {
             try
             {
-                uint _generalCarryingCapacity = 0;
+                uint generalCarryingCapacity = 0;
                 foreach (var item in planes)
                 {
-                    _generalCarryingCapacity += Convert.ToUInt32(item.CarryingCapacity);
+                    generalCarryingCapacity += Convert.ToUInt32(item.CarryingCapacity);
                 }
-                return _generalCarryingCapacity;
+                return generalCarryingCapacity;
             }
             catch (Exception)
             {
@@ -42,15 +41,15 @@ namespace ProjectNamespace
         }
         public void SearchPlaneByFuelConsumption(List<Plane> planes, uint startRangeOfFuelConsumption, uint endRangeOfFuelConsumption)
         {
-            var SortedList = new List<Plane>();
+            var sortedList = new List<Plane>();
             foreach (var item in planes)
             {
                 if (item.FuelConsumption >= startRangeOfFuelConsumption & item.FuelConsumption <= endRangeOfFuelConsumption)
                 {
-                    SortedList.Add(item);
+                    sortedList.Add(item);
                 }
             }
-            foreach (var item in SortedList)
+            foreach (var item in sortedList)
             {
                 Console.WriteLine($"Plane {item.Name} - CarryingCapacity: {item.CarryingCapacity} tons, RangeOfFlight: {item.RangeOfFlight} km, " +
                     $"CapacityForPeople: {item.CapacityForPeople} people, FuelConsumption: {item.FuelConsumption} kg/h;");
@@ -58,8 +57,8 @@ namespace ProjectNamespace
         }
         public void SortByRangeOfFlight(List<Plane> planes)
         {
-            var SortedList = planes.OrderByDescending(o => o.RangeOfFlight).ToList();
-            foreach (var item in SortedList)
+            var sortedList = planes.OrderByDescending(o => o.RangeOfFlight).ToList();
+            foreach (var item in sortedList)
             {
                 Console.WriteLine($"Plane {item.Name} - CarryingCapacity: {item.CarryingCapacity} tons, RangeOfFlight: {item.RangeOfFlight} km, " +
                     $"CapacityForPeople: {item.CapacityForPeople} people, FuelConsumption: {item.FuelConsumption} kg/h;");
